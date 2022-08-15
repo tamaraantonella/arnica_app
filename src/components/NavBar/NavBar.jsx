@@ -11,7 +11,7 @@ const NavBar = () => {
         </div>
         <p className={s.navName}>Árnica Yoga</p>
       </div>
-      <ul className={s.list}>
+      <ul className={s.navList}>
         <li><a className={s.link} href="#top">YogaMats</a> </li>
         <li><a className={s.link} href="#top">Accesories</a> </li>
         <li><a className={s.link} href="#top">All</a></li>
