@@ -1,7 +1,8 @@
 import React from 'react';
 import s from './NavBar.module.css'
 import logo from '../../assets/logosinbc.png'
-import {GiShoppingBag} from 'react-icons/gi'
+import CartWidget from '../CartWidget/CartWidget';
+
 
 const NavBar = () => {
   return (
@@ -16,7 +17,7 @@ const NavBar = () => {
         <li><a className={s.link} href="#top">Accesories</a> </li>
         <li><a className={s.link} href="#top">All</a></li>
       </ul>
-      <GiShoppingBag className={s.chart} />
+      <CartWidget />
     </nav>
   )
 }

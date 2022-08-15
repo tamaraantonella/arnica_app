@@ -45,13 +45,7 @@
 .link:hover{
     color:var(--main-color-light);
 }
-.chart{
-    color:var(--main-color-dark);
-    cursor: pointer;
-}
-.chart:hover{
-    color:var(--main-color-light);
-}
+
 @media screen and (min-width: 768px){
     .navName{
         display: inherit;
