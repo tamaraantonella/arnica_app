@@ -45,6 +45,15 @@
 .link:hover{
     color:var(--main-color-light);
 }
+.navFooter{
+    max-width: 1200px;
+    display: flex;
+    margin: 0 auto;
+    height: 100px;
+    justify-content: space-around;
+    align-items: center;
+    background-color: var(--light-bg);
+}
 
 @media screen and (min-width: 768px){
     .navName{
@@ -56,6 +65,14 @@
 
 @media screen and  (min-width:1200px){
     .nav{
+        max-width: 1200px;
+        display: flex;
+        margin: 0 auto;
+        height: 100px;
+        justify-content: space-around;
+        align-items: center;
+    }
+    .navFooter{
         max-width: 1200px;
         display: flex;
         margin: 0 auto;
