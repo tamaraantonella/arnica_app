@@ -10,7 +10,7 @@ export default function ItemCount({ stock, initial, onAdd}) {
         }
     }
     function remove() {
-        count > 0 && setCount(count - 1)
+        count > 1 && setCount(count - 1)
     }
     return (
         <div className={s.countContainer} >
