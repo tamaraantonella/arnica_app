@@ -1,13 +1,13 @@
 import './App.css';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
-import ItemListContainer from './components/ItemListContainer/ItemListContainer';
+import Main from './components/Main/Main';
 
 function App() {
   return (
     <>
       <Header />
-      <ItemListContainer greeting='Welcome' />
+      <Main/>
       <Footer/>
     </>
   );
