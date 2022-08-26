@@ -1,0 +1,11 @@
+.containerItemList{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+.welcome{
+    margin: 25px 0;
+    background-color: var(--color-primary);
+}

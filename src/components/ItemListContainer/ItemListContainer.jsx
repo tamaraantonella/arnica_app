@@ -1,14 +1,36 @@
-import React from 'react'
-import ItemCount from '../ItemCount/ItemCount'
+import React, {useEffect, useState} from 'react'
+import ItemList from '../ItemList/ItemList'
+import {products} from '../../mock/product'
+import s from './itemListContainer.module.css'
+import Loader from '../Loader/Loader'
 
 export default function ItemListContainer({ greeting }) {
-    function onAdd() {
-        console.log('agregar al carrito')
-    }
-    return (
-        <div>
-            {greeting} to Arnica Shop!
-            <ItemCount stock={10} initial={1} onAdd={onAdd} />
-        </div>
-    )
+    const [items, setItems] = useState([])
+
+    useEffect(() => {
+        const getProducts = new Promise((res,rej)=>{
+            setTimeout(()=>{
+                res(products)
+            }, 3000)
+        });
+        getProducts.then(data=>{
+                setItems(data)   
+            })
+        .catch(err=>{console.log(err)})
+    }, [])
+
+    if(items.length){
+        return (
+            <div className={s.containerItemList}>
+                
+                <div className={s.welcome}>{greeting} to Arnica Shop!</div>
+                <ItemList products={items} />
+            </div>
+
+        )
+        }else{
+            return(
+                <Loader/>
+            )
+        }
 }
