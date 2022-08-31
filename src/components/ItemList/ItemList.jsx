@@ -1,5 +1,5 @@
-import React from 'react'
 import Item from '../Item/Item'
+import React from 'react'
 import s from './itemList.module.css'
 
 export default function ItemList({products}) {
@@ -14,6 +14,7 @@ export default function ItemList({products}) {
                 category={product.category}
                 stock={product.stock}
                 img={product.img}
+                id={product.id}
                 />) 
         : <p>No products found</p>}
     </div>

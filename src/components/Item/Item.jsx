@@ -1,11 +1,9 @@
+import {Link} from 'react-router-dom'
 import React from 'react'
-import ItemCount from '../ItemCount/ItemCount'
 import s from './item.module.css'
 
-export default function Item({name, price, stock, category, img}) {
-    function onAdd() {
-        console.log('agregar al carrito')
-    }
+export default function Item({name, price, stock, category, img, id}) {
+    
   return (
     <div className={s.cardContainer}>
         <h2>{name} </h2>
@@ -17,7 +15,8 @@ export default function Item({name, price, stock, category, img}) {
             <p>Yoga {category}</p>
         </div>
         <p>Stock {stock}</p>
-        <ItemCount stock={stock} initial={1} onAdd={onAdd} />
+        <Link to={`/item/${id}`}><button>See detail</button> </Link>
+        
     </div>
   )
 }
