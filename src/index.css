@@ -29,3 +29,7 @@ button{
   --transition: all .3s ease-in-out;
 }
 iframe[style*="2147483647"]:not([id="webpack-dev-server-client-overlay"]) { display: none; }
+.active{
+  color: var(--dark-color);
+  font-weight: bold;
+}

@@ -1,6 +1,7 @@
+import {Link, NavLink} from 'react-router-dom'
+
 import {AiOutlineInstagram} from 'react-icons/ai'
 import CartWidget from '../CartWidget/CartWidget';
-import {Link} from 'react-router-dom'
 import React from 'react';
 import logo from '../../assets/logosinbc.png'
 import s from './NavBar.module.css'
@@ -13,9 +14,9 @@ const NavBar = ({isFooter}) => {
         <Link to ="/" className={s.link}><p className={s.navName}>Árnica Yoga</p></Link>
         </div>
         <ul className={s.navList}>
-          <Link to ="/category/mats" className={s.link}> <li >YogaMats</li></Link>
-          <Link to ="/category/acc" className={s.link}> <li >Accesories</li></Link>
-          <Link to ="/" className={s.link}> <li >All</li></Link>
+        <Link to ="/category/mats" className={s.link}> <li >YogaMats</li></Link>
+        <Link to ="/category/acc" className={s.link}> <li >Accesories</li></Link>
+        <Link to ="/" className={s.link}> <li >All</li></Link>
           <AiOutlineInstagram className={s.link} />
         </ul>
       </nav>
@@ -30,9 +31,10 @@ const NavBar = ({isFooter}) => {
         <Link to ="/" className={s.link}><p className={s.navName}>Árnica Yoga</p></Link>
       </div>
       <ul className={s.navList}>
-        <Link to ="/category/mats" className={s.link}> <li >YogaMats</li></Link>
-        <Link to ="/category/acc" className={s.link}> <li >Accesories</li></Link>
-        <Link to ="/" className={s.link}> <li >All</li></Link>
+        
+        <NavLink to ="/category/mats" className={s.link}> <li >YogaMats</li></NavLink>
+          <NavLink to ="/category/acc" className={s.link}> <li >Accesories</li></NavLink>
+          <NavLink to ="/" className={s.link}> <li >All</li></NavLink>
       </ul>
       <CartWidget />
     </nav>
