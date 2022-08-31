@@ -32,8 +32,8 @@ export default function ItemListContainer({ greeting }) {
         return (
             
             <div className={s.containerItemList}>   
-                {category? (<h1>{category}</h1>):(<div className={s.welcome}>{greeting} to Arnica Shop!</div>)}    
-                
+                {category && (category==='acc' ? (<div className={s.banner}><h1>Accesories</h1></div>):(<h1 className={s.banner}>Yoga mats</h1>))}    
+                {!category && <div className={s.welcome}><h1>{greeting} to Arnica Shop!</h1></div>}
                 <ItemList products={items} />
             </div>
 
