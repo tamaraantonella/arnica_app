@@ -1,5 +1,6 @@
 import { Route, Routes } from 'react-router-dom';
 
+import Cart from '../Cart/Cart';
 import ItemDetailContainer from '../ItemDetailContainer/ItemDetailContainer';
 import ItemListContainer from '../ItemListContainer/ItemListContainer';
 import React from 'react'
@@ -11,7 +12,8 @@ export default function Main() {
             <Routes>
                 <Route path="/" element={<ItemListContainer greeting='Welcome '/>}/> 
                 <Route path="/item/:id" element={<ItemDetailContainer />} />
-                <Route path="/category/:category" element={<ItemListContainer />} />                
+                <Route path="/category/:category" element={<ItemListContainer />} />  
+                <Route path="/cart" element={<Cart/>} />              
             </Routes>
         </div>
         

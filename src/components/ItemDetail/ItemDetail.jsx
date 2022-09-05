@@ -1,10 +1,13 @@
+import React,{useState} from 'react'
+
 import ItemCount from '../ItemCount/ItemCount'
-import React from 'react'
+import { Link } from 'react-router-dom'
 import s from './itemDetail.module.css'
 
 export default function ItemDetail({item}) {
-  function onAdd() {
-    console.log('agregar al carrito')
+  const [cantidad, setCantidad] =useState(0)
+  function onAdd(count) {
+    setCantidad(count)
 }
   return (
     <div className={s.detailCont}>
@@ -18,7 +21,7 @@ export default function ItemDetail({item}) {
             <p>Yoga {item.category}</p>
             <p>Stock {item.stock}</p>
             <p>{item.description}</p>
-            <ItemCount stock={item.stock} initial={1} onAdd={onAdd} />
+            {cantidad>1 ? <Link to="/cart">Finalizar compra</Link> : <ItemCount stock={item.stock} initial={item.stock !== 0 && 1} onAdd={onAdd} />}
         </div>
     </div>
   )

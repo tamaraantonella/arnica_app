@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+
 import s from './itemCount.module.css'
 
 export default function ItemCount({ stock, initial, onAdd}) {
@@ -19,7 +20,7 @@ export default function ItemCount({ stock, initial, onAdd}) {
                 <p className={s.counter}>{count}</p>
                 <button onClick={()=>add()} className={s.buttonCount}>+</button>
             </div>
-            <button className={s.addChart} onClick={onAdd} >Add to chart</button>
+            <button className={s.addChart} onClick={()=>onAdd(count)} >Add to chart</button>
         </div>
     )
 }
