@@ -21,7 +21,23 @@
     object-fit: cover;
     object-position: center;
 }
-
+.link{
+    text-decoration: none;
+    background-color: var(--main-color-dark);
+    display: block;
+    padding: 8px 15px;
+    color: #fff;
+    margin:5px auto;
+    border-radius: 10px;
+    border: 1px solid var(--main-color-dark);
+    border-color: transparent;
+    transition: var(--transition);
+}
+.link:hover{
+    background-color: var(--light-bg);
+    color: var(--main-color-dark);
+    border-color: var(--main-color-dark);
+}
 /* media queries */
 @media (min-width: 768px) {
     .cardContainer{

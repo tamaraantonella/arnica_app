@@ -36,7 +36,7 @@ const NavBar = ({isFooter}) => {
           <NavLink to ="/category/acc" className={s.link}> <li >Accesories</li></NavLink>
           <NavLink to ="/" className={s.link}> <li >All</li></NavLink>
       </ul>
-      <CartWidget />
+      <Link to="/cart" className={s.link}><CartWidget /></Link>
     </nav>
   )}
 

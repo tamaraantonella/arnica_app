@@ -13,3 +13,17 @@
     object-fit: cover;
     object-position: center;
 }
+.finalizar{
+    display: block;
+    width: 200px;
+    background-color: var(--main-color-light);
+    color: white;
+    padding: 10px;
+    margin: 20px auto;
+    text-align: center;
+    text-decoration: none;
+}
+.finalizar:hover{
+    background-color: var(--light-bg);
+    color: var(--main-color-dark);
+}
