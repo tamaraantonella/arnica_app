@@ -3,7 +3,7 @@ import React, { useContext } from "react";
 import { CartContext } from "../../context/CartContext";
 import { FaRegTrashAlt } from "react-icons/fa";
 import s from "./Cart.module.css";
-
+import { Link } from "react-router-dom";
 
 export default function Cart() {
   const { cart, vaciarCarrito, removeItem, totalPrice } =
@@ -26,15 +26,18 @@ export default function Cart() {
             </div>
           ))}
           <p className={s.total}>Total</p>
-          <p>
-            ${total}
-          </p>
+          <p>${total}</p>
           <button onClick={vaciarCarrito} className={s.vaciar}>
             Empty cart
           </button>
         </div>
       ) : (
-        <p className={s.noCart}>There are no items </p>
+        <div className={s.cartContainer}>
+          <Link to="/" className={s.goBack}>
+            Go back
+          </Link>
+          <p className={s.noCart}>There are no items </p>
+        </div>
       )}
     </div>
   );
