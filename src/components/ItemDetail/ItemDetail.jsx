@@ -7,12 +7,13 @@ import s from "./itemDetail.module.css";
 
 export default function ItemDetail({ item }) {
   const [cantidad, setCantidad] = useState(0);
-  const { addItem } = useContext(CartContext);
+  const { addItem, getProductQuantity } = useContext(CartContext);
 
   function onAdd(count) {
     setCantidad(count);
     addItem(item, count);
   }
+  const quantity = getProductQuantity(item.id);
   return (
     <div className={s.detailCont}>
       <h2>{item.name}</h2>
@@ -33,7 +34,7 @@ export default function ItemDetail({ item }) {
         ) : (
           <ItemCount
             stock={item.stock}
-            initial={item.stock !== 0 && 1}
+            initial={item.stock !== 0 && quantity ? quantity : 1}
             onAdd={onAdd}
           />
         )}

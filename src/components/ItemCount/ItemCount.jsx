@@ -1,9 +1,13 @@
 import React, { useState } from "react";
+import { useEffect } from "react";
 
 import s from "./itemCount.module.css";
 
 export default function ItemCount({ stock, initial, onAdd }) {
   const [count, setCount] = useState(initial);
+  useEffect(() => {
+    setCount(initial);
+  }, [initial])
 
   function add() {
     if (count >= 0 && count < stock) {

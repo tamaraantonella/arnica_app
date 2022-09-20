@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext} from "react";
 
 import { CartContext } from "../../context/CartContext";
 import { GiShoppingBag } from "react-icons/gi";
@@ -6,21 +6,17 @@ import React from "react";
 import style from "./CartWidget.module.css";
 
 export default function CartWidget() {
-  const { cart } = useContext(CartContext);
-  const [cartLength, setCartLength] = useState(0);
+  const { totalProducts } = useContext(CartContext);
 
-  useEffect(() => {
-    setCartLength(0);
-    for (let i = 0; i < cart.length; i++) {
-      setCartLength(cartLength + cart[i].cantidad);
-    }
-    //eslint-disable-next-line
-  }, [cart]);
-
-  return (
-    <div>
-      <GiShoppingBag className={style.chart} />
-      {cartLength}
-    </div>
-  );
+  const cartLength = totalProducts();
+  if (cartLength === 0) {
+    return <div className={style.cartWidget}></div>;
+  } else {
+    return (
+      <div>
+        <GiShoppingBag className={style.chart} />
+        {cartLength}
+      </div>
+    );
+  }
 }

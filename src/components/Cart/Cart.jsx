@@ -4,8 +4,11 @@ import { CartContext } from "../../context/CartContext";
 import { FaRegTrashAlt } from "react-icons/fa";
 import s from "./Cart.module.css";
 
+
 export default function Cart() {
-  const { cart, vaciarCarrito, removeItem } = useContext(CartContext);
+  const { cart, vaciarCarrito, removeItem, totalPrice } =
+    useContext(CartContext);
+  const total = totalPrice();
 
   return (
     <div className={s.container}>
@@ -24,7 +27,7 @@ export default function Cart() {
           ))}
           <p className={s.total}>Total</p>
           <p>
-            ${cart.reduce((acc, item) => acc + item.price * item.cantidad, 0)}
+            ${total}
           </p>
           <button onClick={vaciarCarrito} className={s.vaciar}>
             Empty cart
