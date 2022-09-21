@@ -19,7 +19,7 @@ export default function Cart() {
             <div key={item.id} className={s.cartItem}>
               <p>{item.cantidad}</p>
               <p>{item.name}</p>
-              <p>${item.price}</p>
+              <p>${item.price} c/u</p>
               <button onClick={() => removeItem(item.id)}>
                 <FaRegTrashAlt />
               </button>

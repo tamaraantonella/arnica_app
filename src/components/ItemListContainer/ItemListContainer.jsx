@@ -2,32 +2,33 @@ import React, { useEffect, useState } from "react";
 
 import ItemList from "../ItemList/ItemList";
 import Loader from "../Loader/Loader";
-import { products } from "../../mock/product";
+// import { products } from "../../mock/product";
 import s from "./itemListContainer.module.css";
 import { useParams } from "react-router-dom";
+import { collection, getDocs, query, where } from "firebase/firestore";
+import { db } from "../../firebaseConfig";
 
 export default function ItemListContainer({ greeting }) {
+  //eslint-disable-next-line
   const [items, setItems] = useState([]);
 
   const { category } = useParams();
 
   useEffect(() => {
-    const getProducts = new Promise((res, rej) => {
-      setTimeout(() => {
-        res(products);
-      }, 1000);
-    });
-    const filtrado = products.filter(
-      (product) => product.category === category
-    );
-    getProducts
-      .then((data) => {
-        category ? setItems(filtrado) : setItems(data);
+    const itemCollection = collection(db, "productos");
+    var q;
+    category && (q = query(itemCollection, where("category", "==", category)));
+    getDocs(category ? q : itemCollection)
+      .then((querySnapshot) => {
+        const productos = querySnapshot.docs.map((doc) => {
+          return { id: doc.id, ...doc.data() };
+        });
+        setItems(productos);
       })
-      .catch((err) => {
-        console.log(err);
+      .catch((error) => {
+        console.log("Error searching items", error);
       });
-  }, [category, items]);
+  }, [category]);
 
   if (items.length) {
     return (
