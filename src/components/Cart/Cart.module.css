@@ -18,9 +18,11 @@
   width: 100%;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
   margin-bottom: 1rem;
+  position: relative;
+  gap: 10px;
 }
 .cartContainer {
   width: 50%;
@@ -31,7 +33,10 @@
 }
 .cartItem button {
   border: none;
+  position: absolute;
+  right: 10px;
 }
+
 .total {
   font-weight: bold;
 }
@@ -51,6 +56,29 @@
   transition: var(--transition);
 }
 .goBack:hover {
+  background-color: var(--main-color-dark);
+  color: #fff;
+}
+
+.vaciar {
+  border: none;
+  padding: 5px 15px;
+  margin-top: 20px;
+}
+
+.totalPrice {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+.totalPrice button {
+  border: none;
+  padding: 5px 15px;
+  margin-top: 20px;
+  transition: var(--transition);
+}
+
+.totalPrice button:hover {
   background-color: var(--main-color-dark);
   color: #fff;
 }

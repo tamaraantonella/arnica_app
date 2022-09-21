@@ -19,17 +19,22 @@ export default function Cart() {
             <div key={item.id} className={s.cartItem}>
               <p>{item.cantidad}</p>
               <p>{item.name}</p>
-              <p>${item.price * item.cantidad}</p>
+              <p>${item.price}</p>
               <button onClick={() => removeItem(item.id)}>
                 <FaRegTrashAlt />
               </button>
             </div>
           ))}
-          <p className={s.total}>Total</p>
-          <p>${total}</p>
-          <button onClick={vaciarCarrito} className={s.vaciar}>
-            Empty cart
-          </button>
+          <div className={s.totalPrice}>
+            <p className={s.total}>Total</p>
+            <p>${total}</p>
+          </div>
+          <div className={s.totalPrice}>
+            <button onClick={vaciarCarrito} className={s.vaciar}>
+              Empty cart
+            </button>
+            <button className={s.vaciar}>Buy all</button>
+          </div>
         </div>
       ) : (
         <div className={s.cartContainer}>

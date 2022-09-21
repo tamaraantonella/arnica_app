@@ -9,11 +9,12 @@ export default function CartWidget() {
   const { totalProducts } = useContext(CartContext);
 
   const cartLength = totalProducts();
+  console.log(cartLength)
 
   return (
     <div>
       <GiShoppingBag className={style.chart} />
-      {cartLength === 0 ? "" : { cartLength }}
+      {cartLength === 0 ? "" : cartLength }
     </div>
   );
 }
