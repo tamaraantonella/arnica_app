@@ -33,7 +33,7 @@ export default function Cart() {
             <button onClick={vaciarCarrito} className={s.vaciar}>
               Empty cart
             </button>
-            <button className={s.vaciar}>Buy all</button>
+            <Link to="/buy" className={s.vaciar}>Buy all</Link>
           </div>
         </div>
       ) : (

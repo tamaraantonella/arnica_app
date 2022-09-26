@@ -5,8 +5,26 @@ import CartWidget from "../CartWidget/CartWidget";
 import React from "react";
 import logo from "../../assets/logosinbc.png";
 import s from "./NavBar.module.css";
+import { useEffect } from "react";
+import { collection, getDocs } from "firebase/firestore";
+import { db } from "../../firebaseConfig";
 
 const NavBar = ({ isFooter }) => {
+  //eslint-disable-next-line
+  const [categories, setCategories] = React.useState([]);
+  useEffect(() => {
+    const collectionCat = collection(db, "categorias");
+    getDocs(collectionCat)
+      .then((querySnapshot) => {
+        const categorias = querySnapshot?.docs.map((cat) => {
+          return {
+            id: cat.id,
+            ...cat.data(),
+        }
+        })
+      setCategories(categorias)
+    });
+  }, []);
   if (isFooter) {
     return (
       <nav className={s.navFooter}>
@@ -16,14 +34,19 @@ const NavBar = ({ isFooter }) => {
           </Link>
         </div>
         <ul className={s.navList}>
-          <Link to="/category/mats" className={s.link}>
-            {" "}
-            <li>YogaMats</li>
-          </Link>
-          <Link to="/category/acc" className={s.link}>
-            {" "}
-            <li>Accesories</li>
-          </Link>
+          {categories?.map((cat) => {
+            return (
+              <li key={cat.id} lassName={s.link}>
+                <NavLink
+                  to={`/category/${cat.route}`}
+                  className={s.link}
+                  activeClassName={s.active}
+                >
+                  {cat.name}
+                </NavLink>
+              </li>
+            )
+          })}
           <Link to="/" className={s.link}>
             {" "}
             <li>All</li>

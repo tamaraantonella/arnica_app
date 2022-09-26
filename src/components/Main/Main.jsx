@@ -5,6 +5,7 @@ import ItemDetailContainer from "../ItemDetailContainer/ItemDetailContainer";
 import ItemListContainer from "../ItemListContainer/ItemListContainer";
 import React from "react";
 import s from "./main.module.css";
+import Form from "../Form/Form";
 
 export default function Main() {
   return (
@@ -14,6 +15,7 @@ export default function Main() {
         <Route path="/item/:id" element={<ItemDetailContainer />} />
         <Route path="/category/:category" element={<ItemListContainer />} />
         <Route path="/cart" element={<Cart />} />
+        <Route path="/buy" element={<Form />} />
       </Routes>
     </div>
   );
