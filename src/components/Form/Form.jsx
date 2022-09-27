@@ -7,6 +7,7 @@ import {
 } from "firebase/firestore";
 import { useState } from "react";
 import s from "./Form.module.css";
+import { Link } from "react-router-dom";
 
 export default function Form({ cart, total, vaciarCarrito }) {
   const [orderId, setOrderId] = useState();
@@ -47,6 +48,9 @@ export default function Form({ cart, total, vaciarCarrito }) {
       <div className={s.container}>
         <h1>Order completed!</h1>
         <p>Your order number is: {orderId}</p>
+        <Link to="/" className={s.button}>
+          Go back
+        </Link>
       </div>
     );
   } else {

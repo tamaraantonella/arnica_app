@@ -49,10 +49,10 @@ export default function Cart() {
           </div>
         ) : (
           <div className={s.cartContainer}>
+            <p className={s.noCart}>There are no items </p>
             <Link to="/" className={s.goBack}>
               Go back
             </Link>
-            <p className={s.noCart}>There are no items </p>
           </div>
         )}
       </div>
