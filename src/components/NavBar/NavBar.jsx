@@ -36,7 +36,7 @@ const NavBar = ({ isFooter }) => {
         <ul className={s.navList}>
           {categories?.map((cat) => {
             return (
-              <li key={cat.id} lassName={s.link}>
+              <li key={cat.id} className={s.link}>
                 <NavLink
                   to={`/category/${cat.route}`}
                   className={s.link}
