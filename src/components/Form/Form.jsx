@@ -47,7 +47,7 @@ export default function Form({ cart, total, vaciarCarrito }) {
   if (orderId) {
     return (
       <div className={s.container}>
-        <h1>Order completed!</h1>
+        <h1>Order completed</h1>
         <p>Your order number is: {orderId}</p>
 
         <CommonBtn path="/" text="Go back" />
