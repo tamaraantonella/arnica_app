@@ -1,0 +1,35 @@
+.finalizar {
+  display: block;
+  width: 200px;
+  background-color: var(--main-color-light);
+  color: white;
+  padding: 10px;
+  margin: 20px auto;
+  text-align: center;
+  text-decoration: none;
+  transition: var(--transition);
+  border: none;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+.finalizar:hover {
+  background-color: var(--light-bg);
+  color: var(--main-color-dark);
+}
+.contrast {
+  display: block;
+  width: 200px;
+  background-color: var(--contrast-color);
+  color: white;
+  padding: 10px;
+  margin: 20px auto;
+  text-align: center;
+  text-decoration: none;
+  transition: var(--transition);
+  border: none;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+.contrast:hover {
+  transform: scale(1.03);
+}

@@ -4,19 +4,16 @@ import s from "./item.module.css";
 
 export default function Item({ name, price, stock, category, img, id }) {
   return (
-    <div className={s.cardContainer}>
+    <Link to={`/item/${id}`} className={s.cardContainer}>
       <h2>{name} </h2>
       <div className={s.imgContainer}>
         <img src={img} alt={name} />
       </div>
-      <div>
-        <p>${price}</p>
-        <p>Yoga {category}</p>
-      </div>
+      <div className={s.items}>
+        <p className={s.price}>${price}</p>
+        <p>Yoga {category === "acc" ? 'Accesories' : 'Mat' }</p>
       <p>Stock {stock}</p>
-      <Link to={`/item/${id}`} className={s.link}>
-        See detail
-      </Link>
-    </div>
+      </div>
+    </Link>
   );
 }

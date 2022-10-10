@@ -8,6 +8,7 @@ import {
 import { useState } from "react";
 import s from "./Form.module.css";
 import { Link } from "react-router-dom";
+import CommonBtn from "../Buttons/CommonBtn";
 
 export default function Form({ cart, total, vaciarCarrito }) {
   const [orderId, setOrderId] = useState();
@@ -48,9 +49,8 @@ export default function Form({ cart, total, vaciarCarrito }) {
       <div className={s.container}>
         <h1>Order completed!</h1>
         <p>Your order number is: {orderId}</p>
-        <Link to="/" className={s.button}>
-          Go back
-        </Link>
+
+        <CommonBtn path="/" text="Go back" />
       </div>
     );
   } else {
@@ -88,9 +88,8 @@ export default function Form({ cart, total, vaciarCarrito }) {
             value={input.telefono}
             onChange={handleChange}
           />
-          <button onClick={handleSubmit} className={s.button}>
-            Enviar
-          </button>
+
+          <CommonBtn onClick={handleSubmit} text="Send Form" />
         </form>
       </div>
     );

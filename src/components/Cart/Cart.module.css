@@ -65,20 +65,32 @@
   padding: 5px 15px;
   margin-top: 20px;
 }
-
+.comprar {
+  border: none;
+  padding: 5px 15px;
+  margin-top: 20px;
+  background-color: var(--contrast-color);
+  color: #fff;
+  transition: var(--transition);
+}
+.comprar:hover {
+  font-weight: bold;
+}
 .totalPrice {
   display: flex;
-  justify-content: space-between;
-  gap: 20px;
+  justify-content: center;
+  gap: 15px;
+  width: 100%;
+  align-items: center;
 }
-.totalPrice button {
+.vaciar {
   border: none;
   padding: 5px 15px;
   margin-top: 20px;
   transition: var(--transition);
 }
 
-.totalPrice button:hover {
+.vaciar:hover {
   background-color: var(--main-color-dark);
   color: #fff;
 }

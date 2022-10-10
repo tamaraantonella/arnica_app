@@ -10,6 +10,24 @@
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
   overflow: hidden;
   cursor: pointer;
+  text-decoration: none;
+  color: var(--main-color-dark);
+  transition: var(--transition);
+}
+.cardContainer:hover{
+  transform: scale(1.03);
+}
+.items {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.price {
+  background-color: var(--contrast-color);
+  color: #fff;
+  font-weight: bold;
+  padding: 5px 10px;
+  border-radius: 10px;
 }
 .imgContainer {
   width: 250px;
@@ -38,4 +56,3 @@
   color: var(--main-color-dark);
   border-color: var(--main-color-dark);
 }
-

@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 import Form from "../Form/Form";
 import { useState } from "react";
 import { useEffect } from "react";
+import CommonBtn from "../Buttons/CommonBtn";
 
 export default function Cart() {
   const { cart, vaciarCarrito, removeItem, totalPrice } =
@@ -39,20 +40,22 @@ export default function Cart() {
               <p>${total}</p>
             </div>
             <div className={s.totalPrice}>
-              <button onClick={vaciarCarrito} className={s.vaciar}>
-                Empty cart
-              </button>
-              <button className={s.vaciar} onClick={() => setFinal(true)}>
-                Buy all
-              </button>
+              <CommonBtn
+                onClick={vaciarCarrito}
+                text="Empty cart"
+                contrast={false}
+              />
+              <CommonBtn
+                onClick={() => setFinal(true)}
+                text="Purchase all"
+                contrast={true}
+              />
             </div>
           </div>
         ) : (
           <div className={s.cartContainer}>
             <p className={s.noCart}>There are no items </p>
-            <Link to="/" className={s.goBack}>
-              Go back
-            </Link>
+            <CommonBtn path="/" text="Go Home" />
           </div>
         )}
       </div>

@@ -2,8 +2,8 @@ import React, { useContext, useState } from "react";
 
 import { CartContext } from "../../context/CartContext";
 import ItemCount from "../ItemCount/ItemCount";
-import { Link } from "react-router-dom";
 import s from "./itemDetail.module.css";
+import CommonBtn from "../Buttons/CommonBtn";
 
 export default function ItemDetail({ item }) {
   const [cantidad, setCantidad] = useState(0);
@@ -28,9 +28,7 @@ export default function ItemDetail({ item }) {
         <p>{item.description}</p>
 
         {cantidad >= 1 ? (
-          <Link to="/cart" className={s.finalizar}>
-            Finalizar compra
-          </Link>
+          <CommonBtn path="/cart" text="Purchase" />
         ) : (
           <ItemCount
             stock={item.stock}
@@ -42,4 +40,3 @@ export default function ItemDetail({ item }) {
     </div>
   );
 }
-
