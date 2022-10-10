@@ -57,6 +57,7 @@ export const CartProvider = ({ children }) => {
     });
     return acumulador;
   };
+
   return (
     <CartContext.Provider
       value={{

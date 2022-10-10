@@ -1,5 +1,5 @@
 .nav{
-    max-width: 1200px;
+    max-width: 1300px;
     display: flex;
     margin: 0 auto;
     height: 100px;
@@ -46,7 +46,7 @@
     color:var(--main-color-light);
 }
 .navFooter{
-    max-width: 1200px;
+    max-width: 1300px;
     display: flex;
     margin: 0 auto;
     height: 100px;
@@ -65,7 +65,7 @@
 
 @media screen and  (min-width:1200px){
     .nav{
-        max-width: 1200px;
+        max-width: 1300px;
         display: flex;
         margin: 0 auto;
         height: 100px;
@@ -73,7 +73,7 @@
         align-items: center;
     }
     .navFooter{
-        max-width: 1200px;
+        max-width: 1300px;
         display: flex;
         margin: 0 auto;
         height: 100px;

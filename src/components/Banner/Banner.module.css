@@ -1,0 +1,10 @@
+.container {
+  height: 50vh;
+  width: 100%;
+}
+.img {
+  object-fit: cover;
+  object-position: center;
+  height: 100%;
+  width: 100%;
+}

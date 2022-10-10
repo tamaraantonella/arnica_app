@@ -14,15 +14,14 @@ const NavBar = ({ isFooter }) => {
   const [categories, setCategories] = React.useState([]);
   useEffect(() => {
     const collectionCat = collection(db, "categorias");
-    getDocs(collectionCat)
-      .then((querySnapshot) => {
-        const categorias = querySnapshot?.docs.map((cat) => {
-          return {
-            id: cat.id,
-            ...cat.data(),
-        }
-        })
-      setCategories(categorias)
+    getDocs(collectionCat).then((querySnapshot) => {
+      const categorias = querySnapshot?.docs.map((cat) => {
+        return {
+          id: cat.id,
+          ...cat.data(),
+        };
+      });
+      setCategories(categorias);
     });
   }, []);
   if (isFooter) {
@@ -34,6 +33,10 @@ const NavBar = ({ isFooter }) => {
           </Link>
         </div>
         <ul className={s.navList}>
+          <Link to="/" className={s.link}>
+            {" "}
+            <li>Home</li>
+          </Link>
           {categories?.map((cat) => {
             return (
               <li key={cat.id} className={s.link}>
@@ -45,12 +48,8 @@ const NavBar = ({ isFooter }) => {
                   {cat.name}
                 </NavLink>
               </li>
-            )
+            );
           })}
-          <Link to="/" className={s.link}>
-            {" "}
-            <li>All</li>
-          </Link>
           <AiOutlineInstagram className={s.link} />
         </ul>
       </nav>
@@ -67,6 +66,10 @@ const NavBar = ({ isFooter }) => {
           </Link>
         </div>
         <ul className={s.navList}>
+          <NavLink to="/" className={s.link}>
+            {" "}
+            <li>Home</li>
+          </NavLink>
           <NavLink to="/category/mats" className={s.link}>
             {" "}
             <li>YogaMats</li>
@@ -74,10 +77,6 @@ const NavBar = ({ isFooter }) => {
           <NavLink to="/category/acc" className={s.link}>
             {" "}
             <li>Accesories</li>
-          </NavLink>
-          <NavLink to="/" className={s.link}>
-            {" "}
-            <li>All</li>
           </NavLink>
         </ul>
         <Link to="/cart" className={s.link}>
