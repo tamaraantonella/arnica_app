@@ -7,6 +7,7 @@ import s from "./itemListContainer.module.css";
 import { useParams } from "react-router-dom";
 import { collection, getDocs, query, where } from "firebase/firestore";
 import { db } from "../../firebaseConfig";
+import Banner from "../Banner/Banner";
 
 export default function ItemListContainer({ greeting }) {
   //eslint-disable-next-line
@@ -42,9 +43,12 @@ export default function ItemListContainer({ greeting }) {
             <h1 className={s.banner}>Yoga mats</h1>
           ))}
         {!category && (
-          <div className={s.welcome}>
-            <h1>{greeting} to Arnica Shop!</h1>
-          </div>
+          <>
+            <div className={s.welcome}>
+              <h1>{greeting} to Arnica Shop!</h1>
+            </div>
+            <Banner />
+          </>
         )}
         <ItemList products={items} />
       </div>

@@ -6,7 +6,7 @@ import ItemListContainer from "../ItemListContainer/ItemListContainer";
 import React from "react";
 import s from "./main.module.css";
 import Form from "../Form/Form";
-import Banner from "../Banner/Banner";
+
 
 export default function Main() {
   return (
@@ -15,10 +15,9 @@ export default function Main() {
         <Route
           path="/"
           element={
-            <>
-              <Banner />
+
               <ItemListContainer greeting="Welcome " />
-            </>
+
           }
         />
         <Route path="/item/:id" element={<ItemDetailContainer />} />
