@@ -1,7 +1,0 @@
-.chart{
-    color:var(--main-color-dark);
-    cursor: pointer;
-}
-.chart:hover{
-    color:var(--main-color-light);
-}

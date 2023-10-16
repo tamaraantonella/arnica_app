@@ -1,0 +1,1 @@
+export { CommonBtn } from './CommonBtn';
