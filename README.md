@@ -21,5 +21,5 @@ Here you can shop a wide selection of yoga mats and accesories. Add to the cart,
 https://github.com/tamaraantonella/arnica_app.git
 ```
 
-`npm i`
-`npm start`
+`yarn`
+`yarn dev`
