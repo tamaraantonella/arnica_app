@@ -21,7 +21,7 @@
       "@components/*": ["src/components/*"],
       "@utils/*": ["src/utils/*"],
       "@context/*": ["src/context/*"],
-      "@schemas/*": ["src/schemas/*"],
+      "@schemas/*": ["src/types/*"],
       "@pages/*": ["src/pages/*"]
     }
   },
