@@ -15,7 +15,7 @@ export const Cart = () => {
   }, []);
 
   if (final) {
-    return <Form total={totalPrice} cart={cart} emptyCart={emptyCart} />;
+    return <Form total={totalPrice} cart={cart} />;
   } else {
     return (
       <div className="w-full h-full bg-white flex flex-col justify-center items-center min-h-[18.75rem]">

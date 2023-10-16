@@ -1,13 +1,14 @@
-import { CartContext } from '@context/CartContext';
-import { db } from 'src/firebaseConfig';
+import { CartContextType } from '@schemas/cart-context';
 import { FieldValue, addDoc, collection, serverTimestamp } from 'firebase/firestore';
-import React, { ChangeEvent, useState } from 'react';
+import { ChangeEvent, useContext, useState } from 'react';
+import { db } from 'src/firebaseConfig';
 import { CommonBtn } from '../common-button';
+import { Cart } from '@schemas/cart';
+import { CartContext } from '@context/CartContext';
 
 interface FormProps {
-  cart?: CartContext['cart'];
+  cart?: CartContextType['cart'];
   total?: number;
-  emptyCart?: CartContext['emptyCart'];
 }
 
 interface Buyer {
@@ -21,16 +22,18 @@ type BuyerKeys = keyof Buyer;
 const buyerKeys: BuyerKeys[] = ['name', 'lastName', 'phone', 'email'];
 
 interface Order {
-  items: CartContext['cart'];
+  items: Cart;
   total: number;
   date: FieldValue;
   buyer: Buyer;
 }
 
-export const Form = ({ cart, total, emptyCart }: FormProps) => {
+export const Form = ({ cart, total }: FormProps) => {
   const [orderId, setOrderId] = useState<string>();
+  const {emptyCart} = useContext(CartContext) as CartContextType;
 
   const sendOrder = () => {
+    if(!cart || !total ) return;
     const order: Order = {
       buyer: {
         ...buyer
